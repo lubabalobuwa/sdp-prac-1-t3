@@ -22,8 +22,7 @@ namespace Euler
             Console.WriteLine(sum);
         }
 
-        
-        public static int FindSmallestDiviser(int num)
+    public static int FindSmallestDiviser(int num)
         {
             int sumSquares = 0;
             for (int i = 1; i < num+1; i++)
@@ -41,7 +40,8 @@ namespace Euler
 
             return diff;
         }
-		
+	
+
         static void Main(string[] args)
         {
 			Multiples();
