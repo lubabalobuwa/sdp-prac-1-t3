@@ -44,6 +44,38 @@ namespace Euler
 
             return diff;
         }
+		        public static void findPrime()
+        {
+            int count = 1;
+            int idx = 3;
+            while( true)
+            {
+                int nums = 1;
+                bool isPrime = true;
+                for(int i  = 2; i  <= idx; i++)
+                {
+                    if(idx % i == 0)
+                    {
+                        nums++;
+                        if (nums > 2)
+                        {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                    
+                }
+                if (isPrime)
+                {
+                    count++;
+                    if(count == 10001)
+                    {
+                        Console.WriteLine("the 10 001st prime number is " + idx);
+                    }
+                }
+                idx++;
+            }
+        }// Finds the 10001st prime number
 
         public CheckPrime(double temp)
         {
@@ -82,8 +114,9 @@ namespace Euler
          Console.Writeline( LargestPrimeFactor(600851475143);  
 		 
 		  Console.WriteLine("The number is :" + FindSmallestDiviser(100));
-           
+           findPrime();
           Console.ReadLine();
         }
+		
     }
 }
