@@ -111,7 +111,7 @@ namespace Euler
         }
         
                 
-        static void Main(string[] args)
+      public static void Main(string[] args)
         {
 	   	  Multiples();
 		  Console.WriteLine("The number is :" + FindSmallestDiviser(100));
