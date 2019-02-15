@@ -9,9 +9,8 @@ namespace Euler
     class Program
 
 
-    { public static int FindSmallestDiviser(int num)
 
-    {
+    { 
         public static void Multiples()
         {
             int sum = 0;
@@ -77,44 +76,47 @@ namespace Euler
             }
         }// Finds the 10001st prime number
 
-        public CheckPrime(double temp)
+        public static bool CheckPrime(double temp)
         {
             int rd=0;
-            for(int i=1;i<-temp){
+            for(int i=1;i <=temp;i++){
                 if(temp % i==0){
-                    rd++
+                    rd++;
                 }
             }
             if (rd==2)
             {
                 return true;
             }
-            return false
+            return false;
         }
         
-        public double LargestPrimeFactor(double Num)
+        public static double LargestPrimeFactor(double num)
         {
-            List<double> primefactors = new list<double>();
+            List<double> primefactors = new List<double>();
             double temp=0;
-            for (double i=0;i<num;i++){
-                if((num%i)==0){
-                    if(checkPrime(temp)){
-                        primefactors.Add(temp)
+            for (double i=0;i<num;i++)
+            {
+                if((num%i)==0)
+                {
+                    temp = i;
+                    if(CheckPrime(temp))
+                    {
+                        primefactors.Add(temp);
                     }
                 }
             }
-            primefactors.sort();
+            primefactors.Sort();
             return primefactors[primefactors.Count-1];
         }
         
                 
         static void Main(string[] args)
         {
-			Multiples();
-         Console.Writeline( LargestPrimeFactor(600851475143);  
-		 
+	   	  Multiples();
 		  Console.WriteLine("The number is :" + FindSmallestDiviser(100));
-           findPrime();
+          findPrime();
+          Console.WriteLine("This might take a while \n " +"Largest Prime Factor of 600851475143 is : " +LargestPrimeFactor(600851475143));
           Console.ReadLine();
         }
 		
