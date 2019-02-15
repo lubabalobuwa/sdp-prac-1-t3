@@ -8,41 +8,37 @@ namespace Euler
 {
     class Program
     {
-        public static void findPrime()
-        {
-            int count = 1;
-            int idx = 3;
-            while( true)
-            {
-                int nums = 1;
-                bool isPrime = true;
-                for(int i  = 2; i  <= idx; i++)
-                {
-                    if(idx % i == 0)
-                    {
-                        nums++;
-                        if (nums > 2)
-                        {
-                            isPrime = false;
-                            break;
-                        }
-                    }
-                    
+        public CheckPrime(double temp){
+            int rd=0;
+            for(int i=1;i<-temp){
+                if(temp % i==0){
+                    rd++
                 }
-                if (isPrime)
-                {
-                    count++;
-                    if(count == 10001)
-                    {
-                        Console.WriteLine("the 10 001st prime number is " + idx);
-                    }
-                }
-                idx++;
             }
-        }// Finds the 10001st prime number
+            if(rd==2){
+                return true;
+            }
+            return false
+        }
+        
+        public double LargestPrimeFactor(double Num){
+            List<double> primefactors = new list<double>();
+            double temp=0;
+            for (double i=0;i<num;i++){
+                if((num%i)==0){
+                    if(checkPrime(temp)){
+                        primefactors.Add(temp)
+                    }
+                }
+            }
+            primefactors.sort();
+            return primefactors[primefactors.Count-1];
+        }
+        
+                
         static void Main(string[] args)
         {
-            findPrime();
+         Console.Writeline( LargestPrimeFactor(600851475143);  
         }
     }
 }
