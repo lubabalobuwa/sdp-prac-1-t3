@@ -7,42 +7,32 @@ using System.Threading.Tasks;
 namespace Euler
 {
     class Program
-    {
-        public static void findPrime()
+
+
+    { public static int FindSmallestDiviser(int num)
         {
-            int count = 1;
-            int idx = 3;
-            while( true)
+            int sumSquares = 0;
+            for (int i = 1; i < num+1; i++)
             {
-                int nums = 1;
-                bool isPrime = true;
-                for(int i  = 2; i  <= idx; i++)
-                {
-                    if(idx % i == 0)
-                    {
-                        nums++;
-                        if (nums > 2)
-                        {
-                            isPrime = false;
-                            break;
-                        }
-                    }
-                    
-                }
-                if (isPrime)
-                {
-                    count++;
-                    if(count == 10001)
-                    {
-                        Console.WriteLine("the 10 001st prime number is " + idx);
-                    }
-                }
-                idx++;
+                sumSquares += (i * i);
             }
-        }// Finds the 10001st prime number
+            int sum = 0;
+            for (int xs = 1; xs < num+1; xs++)
+            {
+                sum += xs;
+            }
+            int diff = (sum * sum) - sumSquares;
+
+
+
+            return diff;
+        }
         static void Main(string[] args)
         {
-            findPrime();
+             Console.WriteLine("The number is :" + FindSmallestDiviser(100));
+           
+            Console.ReadLine();
+
         }
     }
 }
